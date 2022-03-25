@@ -31,7 +31,7 @@
               <div class="row">
                 <div class="col-8 col-sm-12 col-xl-8 my-auto">
                   <div class="d-flex d-sm-block d-md-flex align-items-center">
-                    <h2 class="mb-0">2</h2>
+                    <h2 class="mb-0">{{$dossier->count()}}</h2>
                     <p class="text-success ml-2 mb-0 font-weight-medium"></p>
                   </div>
                   <h6 class="text-muted font-weight-normal"></h6>
@@ -50,7 +50,7 @@
               <div class="row">
                 <div class="col-8 col-sm-12 col-xl-8 my-auto">
                   <div class="d-flex d-sm-block d-md-flex align-items-center">
-                    <h2 class="mb-0">2</h2>
+                    <h2 class="mb-0">{{$user->count()}}</h2>
                     <p class="text-danger ml-2 mb-0 font-weight-medium"></p>
                   </div>
                   <h6 class="text-muted font-weight-normal"></h6>
