@@ -31,8 +31,6 @@
                               <td>{{$dossier->date}}</td>
                               <td><a href="http://"><i class="mdi mdi-arrow-down-bold-circle-outline"></i></a></td>
                             </tr>
-
-
                           </tbody>
                         </table>
 
