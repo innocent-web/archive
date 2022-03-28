@@ -19,8 +19,8 @@
         <div class="card">
             <div class="card-body">
                 <center class="m-t-30">
-                    <a href="" target="_blank" >
-                        <img src="../../../images/favicon.ico"
+                    <a href="{{route('download', $dossier->file)}}" target="_blank" >
+                        <img src="../../../images/download-flat.png"
                     class="rounded-circle" width="150" alt="Telecharger" ></a>
                     <h4 class="card-title m-t-10">{{$dossier->file}}</h4>
                     <h6 class="card-subtitle">Reference : {{$dossier->ref}}</h6>

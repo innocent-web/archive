@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Dossier\DossierController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -36,6 +37,11 @@ Route::namespace('Type')->prefix('type')->group(function(){
 Route::namespace('Genre')->prefix('genre')->group(function(){
     Route::resource('genre','GenresController');
 });
+
+Route::get('/download{file}', 'DownController@download')->name('download');
+
+Route::get('/search','SearchController@search')->name('search');
+
 
 
 
