@@ -19,9 +19,10 @@ class CreateDossiersTable extends Migration
             $table->string('destination');
             $table->string('intitule');
             $table->string('file');
-            $table->string('type_id');
-            $table->string('genre_id');
+            $table->string('type');
+            $table->string('genre');
             $table->string('date');
+            $table->string('observation');
             $table->timestamps();
         });
     }

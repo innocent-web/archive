@@ -30,9 +30,9 @@ class UsersTableSeeder extends Seeder
 
 
     $utilisateur = User::create([
-        'name'=>'utilisateur',
+        'name'=>'Ianona Innocent',
         'pseudo'=>'user',
-        'email'=>'utilisateur@gmail.com',
+        'email'=>'innocent@chef.com',
         'password'=>Hash::make('password')
 
     ]);

@@ -19,7 +19,7 @@
     <link href="../assets/libs/chartist/dist/chartist.min.css" rel="stylesheet">
     <link href="../assets/libs/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.css" rel="stylesheet">
     <!-- Custom CSS -->
-    <link href="../css/style.min.css" rel="stylesheet">
+    <link href="../../../css/style.min.css" rel="stylesheet">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -95,14 +95,20 @@
                         <!-- ============================================================== -->
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark pro-pic" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                <img src="../images/favicon.ico" alt="user" class="rounded-circle" width="31">
+                                <img src="../../../images/favicon.ico" alt="user" class="rounded-circle" width="31">
                                <span class="mb-0 fw-bold">{{ Auth::user()->pseudo }}</span>
                             </a>
                             <ul class="dropdown-menu dropdown-menu-end user-dd animated" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="javascript:void(0)"><i class="ti-user m-r-5 m-l-5"></i>
+                                <a class="dropdown-item" href="{{route('admin.users.index')}}"><i class="ti-user m-r-5 m-l-5"></i>
                                     Liste User</a>
-                                <a class="dropdown-item" href="javascript:void(0)"><i class="ti-wallet m-r-5 m-l-5"></i>
+                                <a class="dropdown-item" href="{{ route('logout') }}"
+                                onclick="event.preventDefault();
+                               document.getElementById('logout-form').submit();">
+                                    <i class="ti-wallet m-r-5 m-l-5"></i>
                                     Se deconnecté</a>
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                        @csrf
+                                    </form>
                             </ul>
                         </li>
                         <!-- ============================================================== -->
@@ -124,6 +130,7 @@
                 <!-- Sidebar navigation-->
                 <nav class="sidebar-nav">
                     <ul id="sidebarnav">
+                        <br>
                         <li class="sidebar-item">
                              <a class="sidebar-link waves-effect waves-dark sidebar-link"
                                 href=" {{route('home')}} " aria-expanded="false"><i class="mdi mdi-view-dashboard"></i>
@@ -141,7 +148,7 @@
                             </a>
                         </li>
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                                href="icon-material.html" aria-expanded="false"><i class="mdi mdi-face"></i><span
+                                href=" {{route('genre.index')}} " aria-expanded="false"><i class="mdi mdi-face"></i><span
                                     class="hide-menu">Genres</span></a></li>
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
                                 href="starter-kit.html" aria-expanded="false"><i class="mdi mdi-file"></i><span
@@ -164,25 +171,8 @@
         <!-- Page wrapper  -->
         <!-- ============================================================== -->
         <div class="page-wrapper">
-            <!-- ============================================================== -->
-            <!-- Bread crumb and right sidebar toggle -->
-            <!-- ============================================================== -->
-            <div class="page-breadcrumb">
-                <div class="row align-items-center">
-                    <div class="col-6">
-                        <nav aria-label="breadcrumb">
-                            <ol class="breadcrumb mb-0 d-flex align-items-center">
-                              <li class="breadcrumb-item"><a href="index.html" class="link"><i class="mdi mdi-home-outline fs-4"></i></a></li>
-                              <li class="breadcrumb-item active" aria-current="page">Tableau de Bord</li>
-                            </ol>
-                          </nav>
-                    </div>
-                </div>
-            </div>
-            <!-- ============================================================== -->
-            <!-- End Bread crumb and right sidebar toggle -->
-            <!-- ============================================================== -->
-            <!-- ============================================================== -->
+
+
             <!-- Container fluid  -->
             <!-- ============================================================== -->
             <div class="container-fluid">
@@ -220,21 +210,21 @@
     <!-- ============================================================== -->
     <!-- All Jquery -->
     <!-- ============================================================== -->
-    <script src="../assets/libs/jquery/dist/jquery.min.js"></script>
+    <script src="../../../assets/libs/jquery/dist/jquery.min.js"></script>
     <!-- Bootstrap tether Core JavaScript -->
-    <script src="../assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="../js/app-style-switcher.js"></script>
+    <script src="../../../assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../../../js/app-style-switcher.js"></script>
     <!--Wave Effects -->
-    <script src="../js/waves.js"></script>
+    <script src="../../../js/waves.js"></script>
     <!--Menu sidebar -->
-    <script src="../js/sidebarmenu.js"></script>
+    <script src="../../../js/sidebarmenu.js"></script>
     <!--Custom JavaScript -->
-    <script src="../js/custom.js"></script>
+    <script src="../../../js/custom.js"></script>
     <!--This page JavaScript -->
     <!--chartis chart-->
     <script src="../assets/libs/chartist/dist/chartist.min.js"></script>
     <script src="../assets/libs/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.min.js"></script>
-    <script src="../js/pages/dashboards/dashboard1.js"></script>
+    <script src="../../../js/pages/dashboards/dashboard1.js"></script>
 </body>
 
 </html>

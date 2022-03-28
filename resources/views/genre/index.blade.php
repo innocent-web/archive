@@ -7,10 +7,10 @@
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb mb-0 d-flex align-items-center">
                   <li class="breadcrumb-item"><a href=" {{route('home')}} " class="link"><i class="mdi mdi-home-outline fs-4"></i></a></li>
-                  <li class="breadcrumb-item active" aria-current="page">Type</li>
+                  <li class="breadcrumb-item active" aria-current="page">Genre</li>
                 </ol>
               </nav>
-            <h1 class="mb-0 fw-bold">Type</h1>
+            <h1 class="mb-0 fw-bold">Genre</h1>
         </div>
     </div>
 </div>
@@ -22,11 +22,10 @@
                 <!-- title -->
                 <div class="d-md-flex">
                     <div>
-                        <h4 class="card-title">Nos Types de Document</h4>
-
+                        <h4 class="card-title">Nos Genres de Document</h4>
                     </div>
                     <div class="ms-auto">
-                        <a href=" {{route('type.create')}} " class="btn d-block w-100 btn-primary text-white" >Nouveau Type</a>
+                        <a href=" {{route('genre.create')}} " class="btn d-block w-100 btn-primary text-white" >Nouveau Genre</a>
                     </div>
                 </div>
                 <!-- title -->
@@ -35,18 +34,18 @@
                         <thead>
                             <tr>
                                 <th class="border-top-0">#</th>
-                                <th class="border-top-0">Type</th>
+                                <th class="border-top-0">Genre</th>
                                 <th class="border-top-0">Action</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($type as $item)
+                            @foreach ($genre as $item)
                             <tr>
                                 <td>{{$item->id}}</td>
-                                <td>{{$item->type}}</td>
+                                <td>{{$item->genre}}</td>
                                 <td>
 
-                                    <form action=" {{route('type.destroy', $item->id)}}" method="get" class="d-inline">
+                                    <form action=" {{route('genre.destroy', $item->id)}}" method="get" class="d-inline">
                                         <a  class="btn d-inline w-100 btn-danger text-white" >Supprimer</a>
                                     </form>
 

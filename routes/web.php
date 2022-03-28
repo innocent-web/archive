@@ -30,9 +30,11 @@ Route::namespace('Admin')->prefix('admin')->name('admin.')->middleware('can:mana
 Route::namespace('Dossier')->prefix('dossier')->group(function(){
     Route::resource('dossiers', 'DossierController');
 });
-Route::namespace('Type')->prefix('type')->group(function
-(){
+Route::namespace('Type')->prefix('type')->group(function(){
     Route::resource('type','TypesController');
+});
+Route::namespace('Genre')->prefix('genre')->group(function(){
+    Route::resource('genre','GenresController');
 });
 
 
