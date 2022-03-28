@@ -38,7 +38,7 @@ class DossierController extends Controller
     {
         $type=Type::all();
         $genre=Genre::all();
-        return view('dossier.add',[
+        return view('dossier.ajouter',[
             'type'=>$type,
             'genre'=>$genre
         ]);

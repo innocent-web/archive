@@ -27,11 +27,14 @@ Route::namespace('Admin')->prefix('admin')->name('admin.')->middleware('can:mana
 {
     Route::resource('users', 'UsersController');
 });
-Route::namespace('dossier')->prefix('dossier')->group(function(){
+Route::namespace('Dossier')->prefix('dossier')->group(function(){
     Route::resource('dossiers', 'DossierController');
 });
+Route::namespace('Type')->prefix('type')->group(function
+(){
+    Route::resource('type','TypesController');
+});
 
-Route::get('/search', 'DossierController@search')->name('search');
 
 
 
