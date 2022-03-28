@@ -14,7 +14,7 @@
     <title>Gestion Archive</title>
     <link rel="canonical" href="https://www.wrappixel.com/templates/Flexy-admin-lite/" />
     <!-- Favicon icon -->
-    <link rel="icon" type="image/png" sizes="16x16" href="../images/favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16" href="../../../images/favicon.ico">
     <!-- Custom CSS -->
     <link href="../assets/libs/chartist/dist/chartist.min.css" rel="stylesheet">
     <link href="../assets/libs/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.css" rel="stylesheet">
@@ -80,8 +80,9 @@
                         <!-- ============================================================== -->
                         <li class="nav-item search-box"> <a class="nav-link waves-effect waves-dark"
                                 href="javascript:void(0)"><i class="mdi mdi-magnify me-1"></i> <span class="font-16">Search</span></a>
-                            <form class="app-search position-absolute">
-                                <input type="text" class="form-control" placeholder="Search &amp; enter"> <a
+                            <form class="app-search position-absolute" method="GET"
+                            action="{{route('search')}}">
+                                <input type="text" name="search" class="form-control" placeholder="Search &amp; enter"> <a
                                     class="srh-btn"><i class="mdi mdi-window-close"></i></a>
                             </form>
                         </li>

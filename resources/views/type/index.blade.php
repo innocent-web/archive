@@ -45,9 +45,12 @@
                                 <td>{{$item->id}}</td>
                                 <td>{{$item->type}}</td>
                                 <td>
-
-                                    <form action=" {{route('type.destroy', $item->id)}}" method="get" class="d-inline">
-                                        <a  class="btn d-inline w-100 btn-danger text-white" >Supprimer</a>
+                                    <a href="{{route('type.edit', $item->id)}}"  class="btn d-inline w-100 btn-success text-white" >Editer</a>
+                                    <form action=" {{route('type.destroy', $item->id)}}" method="POST" class="d-inline">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" href="{{route('type.destroy', $item->id)}}"
+                                        class="btn d-inline btn-danger text-white" >Supprimer</button>
                                     </form>
 
                                 </td>

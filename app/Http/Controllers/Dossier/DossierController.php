@@ -6,7 +6,8 @@ use App\Type;
 use App\Dossier;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Stoarge;
+use Illuminate\Support\Facades\Storage;
+
 
 use function PHPSTORM_META\type;
 
@@ -17,14 +18,6 @@ class DossierController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function download(Request $request){
-        $file=Dossier::where('file');
-
-        return response()->download($file);
-
-    }
-
-
     public function index()
     {
         $dossier=Dossier::all();
@@ -36,6 +29,12 @@ class DossierController extends Controller
             'type'=>$type
         ]);
     }
+
+
+   public function download(Request $request, $file)
+   {
+        return response()->download(public_path('files/' .$file));
+   }
 
     /**
      * Show the form for creating a new resource.

@@ -61,9 +61,9 @@ class TypesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Type $type)
     {
-        //
+        return view('type.edit',compact('type'));
     }
 
     /**
@@ -73,9 +73,15 @@ class TypesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Type $type)
     {
-        //
+
+        $request->validate([
+            'type'=>'required',
+
+        ]);
+            $type->update($request->all());
+            return redirect()->route('type.index');
     }
 
     /**
@@ -84,8 +90,9 @@ class TypesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Type $type)
     {
-        //
+        $type->delete();
+        return redirect()->back();
     }
 }

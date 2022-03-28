@@ -27,7 +27,7 @@ class GenresController extends Controller
     public function create()
     {
         $genre=Genre::all();
-        return view('genre.index', compact('genre'));
+        return view('genre.add', compact('genre'));
     }
 
     /**
@@ -38,7 +38,10 @@ class GenresController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $genre=new Genre();
+        $genre->genre=$request->genre;
+        $genre->save();
+        return redirect()->route('genre.index');
     }
 
     /**
@@ -58,9 +61,10 @@ class GenresController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Genre $genre)
     {
-        //
+
+        return view('genre.edit', compact('genre'));
     }
 
     /**
@@ -70,9 +74,15 @@ class GenresController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Genre $genre)
     {
-        //
+
+        $request->validate([
+            'genre'=>'required',
+
+        ]);
+            $genre->update($request->all());
+            return redirect()->route('genre.index');
     }
 
     /**
@@ -81,8 +91,9 @@ class GenresController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Genre $genre)
     {
-        //
+        $genre->delete();
+        return redirect()->back()->with('success', 'genre removed');
     }
 }
