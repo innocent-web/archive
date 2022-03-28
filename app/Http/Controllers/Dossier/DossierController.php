@@ -6,7 +6,7 @@ use App\Type;
 use App\Dossier;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Stoarge;
 
 use function PHPSTORM_META\type;
 
@@ -17,6 +17,14 @@ class DossierController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function download(Request $request){
+        $file=Dossier::where('file');
+
+        return response()->download($file);
+
+    }
+
+
     public function index()
     {
         $dossier=Dossier::all();
@@ -38,7 +46,7 @@ class DossierController extends Controller
     {
         $type=Type::all();
         $genre=Genre::all();
-        return view('dossier.ajouter',[
+        return view('dossier.add',[
             'type'=>$type,
             'genre'=>$genre
         ]);
@@ -61,9 +69,10 @@ class DossierController extends Controller
         $dossier->ref=$request->ref;
         $dossier->destination=$request->destination;
         $dossier->intitule=$request->intitule;
-        $dossier->type_id=$request->type_id;
-        $dossier->genre_id=$request->genre_id;
+        $dossier->type=$request->type;
+        $dossier->genre=$request->genre;
         $dossier->date=$request->date;
+        $dossier->observation=$request->observation;
         $dossier->save();
         return redirect()->route('dossiers.index');
     }

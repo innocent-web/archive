@@ -25,7 +25,7 @@ class UsersController extends Controller
     public function index()
     {
         $users = User::all();
-       return  view ('admin.users.index')->with('users', $users);
+       return  view ('admin.users.index', compact('users'));
     }
 
     /**
@@ -39,7 +39,7 @@ class UsersController extends Controller
             return redirect()->route('admin.users.index');
         }
         $roles = Role::all();
-        return view('admin.users.modifier', [
+        return view('admin.ajout', [
             'user' => $user,
             'roles' => $roles,
          ]);
@@ -62,7 +62,7 @@ class UsersController extends Controller
         $users->save();
         $role = Role::select('id')->Where('name', 'utilisateur')->first();
         $users->roles()->attach($role);
-        return view('admin.users.index');
+        return redirect()->route('admin.users.index');
     }
     /**
      * Display the specified resource.

@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Genre;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Genre;
 
 class GenresController extends Controller
 {
@@ -14,7 +15,8 @@ class GenresController extends Controller
      */
     public function index()
     {
-        //
+        $genre=Genre::all();
+        return view('genre.index',compact('genre'));
     }
 
     /**
@@ -24,7 +26,8 @@ class GenresController extends Controller
      */
     public function create()
     {
-        //
+        $genre=Genre::all();
+        return view('genre.index', compact('genre'));
     }
 
     /**
