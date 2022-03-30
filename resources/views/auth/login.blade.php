@@ -21,7 +21,7 @@
   <body>
     <div class="login-box">
     <img src="../images/favicon.ico" class="avatar">
-        <h1>Archive Dossier</h1>
+        <h1>Service de la Législation, de la Documentation et du Contentieux </h1>
             <form method="POST" action="{{route('login')}}">
                 @csrf
             <p>Email</p>
@@ -29,7 +29,7 @@
             <p>Mot de passe</p>
             <input type="password" name="password" placeholder="Enter Password" required>
             <br><br>
-            <button type="submit">Login</button>
+            <button type="submit">Connexion</button>
             </form>
 
 
