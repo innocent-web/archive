@@ -9,9 +9,7 @@
                                      <a href=" {{route('dossiers.show', $item->id)}} "><strong>{{$item->ref}}</strong></a>
                                                 {{ $item->file }}
                                         </p>
-
                                         @endforeach
-
                             @else
                             <div>
                                 <h2>Not found</h2>

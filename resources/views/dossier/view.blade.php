@@ -49,6 +49,9 @@
                     <div class="form-group">
                         <label class="col-md-12"> <strong>Observation : </strong> {{$dossier->observation}}</label>
                     </div>
+                    <div class="form-group">
+                        <label class="col-md-12"> <strong>Date : </strong> {!! date('d/M/y', strtotime($dossier->date)) !!}</label>
+                    </div>
             </div>
         </div>
     </div>

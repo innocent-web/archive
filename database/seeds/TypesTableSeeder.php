@@ -17,6 +17,5 @@ class TypesTableSeeder extends Seeder
         Type::create(['type'=>'decret']);
         Type::create(['type'=>'decision']);
         Type::create(['type'=>'projet d_arret']);
-        Type::create(['type'=>'Autres']);
     }
 }
