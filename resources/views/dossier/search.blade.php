@@ -6,7 +6,7 @@
                                     @if($dossier->isNotEmpty())
                                     @foreach ($dossier as $item)
                                          <p class="bg-warining">
-                                        <strong>{{$item->ref}}</strong>
+                                     <a href=" {{route('dossiers.show', $item->id)}} "><strong>{{$item->ref}}</strong></a>
                                                 {{ $item->file }}
                                         </p>
 
