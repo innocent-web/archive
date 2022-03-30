@@ -22,16 +22,16 @@
                 <!-- title -->
                 <div class="d-md-flex">
                     <div>
-                        <h4 class="card-title">Nos Documents</h4>
+                        <h4 class="card-title">Liste</h4>
                         <a href=" {{route('dossiers.create')}} " class="btn d-block w-100 btn-danger text-white" >Nouveau Document</a>
                     </div>
                     <div class="ms-auto">
                         <div class="dl">
                             <select class="form-select shadow-none">
-                                <option value="0" selected>Monthly</option>
-                                <option value="1">Daily</option>
-                                <option value="2">Weekly</option>
-                                <option value="3">Yearly</option>
+                                <option value="0" selected>Jour</option>
+                                <option value="1">Semaine</option>
+                                <option value="2">Mois</option>
+                                <option value="3">Annee</option>
                             </select>
                         </div>
                     </div>
@@ -43,8 +43,6 @@
                             <tr>
                                 <th class="border-top-0">Ref</th>
                                 <th class="border-top-0">Intitule</th>
-                                <th class="border-top-0">Type</th>
-                                <th class="border-top-0">Genre</th>
                                 <th class="border-top-0">Destination</th>
                                 <th class="border-top-0">Documents</th>
                                 <th class="border-top-0">Date</th>
@@ -57,12 +55,10 @@
                                     <h4 class="m-b-0 font-16">{{$item->ref}}</h4>
                                     </a></td>
                                 <td>{{$item->intitule}}</td>
-                                <td>{{$item->type_id}}</td>
-                                <td>{{$item->genre_id}}</td>
                                 <td>{{$item->destination}}</td>
                                 <td>{{$item->file}}</td>
                                 <td>
-                                    <h5 class="m-b-0">{{$item->date}}</h5>
+                                    <h5 class="m-b-0">{!! date('d/M/y', strtotime($item->date)) !!}</h5>
                                 </td>
                             </tr>
                             @endforeach
