@@ -20,7 +20,7 @@ class DossierController extends Controller
      */
     public function index()
     {
-        $dossier=Dossier::all();
+        $dossier=Dossier::orderBy('id', 'desc')->paginate(10);
         $genre=Genre::all();
         $type=Type::all();
         return view('dossier.index', [
@@ -76,17 +76,7 @@ class DossierController extends Controller
         return redirect()->route('dossiers.index');
     }
 
-    public function search(Request $request){
-        if (request()->query('search')){
-            $search = $request->input('search');
-             $dossier = Dossier::query()
-            ->where('file', 'LIKE', "%{$search}%")
-            ->orWhere('date', 'LIKE', "%{$search}%")
-            ->orWhere('destination','LIKE',"%{$search}%")
-            ->get();
-            }
-            return view('dossier.search',compact('dossier'));
-        }
+
 
     /**
      * Display the specified resource.

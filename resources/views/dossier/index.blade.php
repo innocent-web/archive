@@ -51,24 +51,25 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($dossier as $dossier)
+                            @foreach ($dossier as $item)
                             <tr>
-                                <td><a href="{{route('dossiers.show',$dossier->id)}}">
-                                    <h4 class="m-b-0 font-16">{{$dossier->ref}}</h4>
+                                <td><a href="{{route('dossiers.show',$item->id)}}">
+                                    <h4 class="m-b-0 font-16">{{$item->ref}}</h4>
                                     </a></td>
-                                <td>{{$dossier->intitule}}</td>
-                                <td>{{$dossier->type_id}}</td>
-                                <td>{{$dossier->genre_id}}</td>
-                                <td>{{$dossier->destination}}</td>
-                                <td>{{$dossier->file}}</td>
+                                <td>{{$item->intitule}}</td>
+                                <td>{{$item->type_id}}</td>
+                                <td>{{$item->genre_id}}</td>
+                                <td>{{$item->destination}}</td>
+                                <td>{{$item->file}}</td>
                                 <td>
-                                    <h5 class="m-b-0">{{$dossier->date}}</h5>
+                                    <h5 class="m-b-0">{{$item->date}}</h5>
                                 </td>
                             </tr>
                             @endforeach
                         </tbody>
                     </table>
                 </div>
+                {{ $dossier -> links() }}
             </div>
         </div>
     </div>

@@ -12,6 +12,7 @@ class SearchController extends Controller
             $search = $request->input('search');
              $dossier = Dossier::query()
             ->where('file', 'LIKE', "%{$search}%")
+            ->orWhere('ref','LIKE', "%{$search}%")
             ->orWhere('date', 'LIKE', "%{$search}%")
             ->orWhere('destination','LIKE',"%{$search}%")
             ->get();
