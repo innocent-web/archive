@@ -23,8 +23,9 @@
                 <div class="d-md-flex">
                     <div>
                         <h4 class="card-title">Liste</h4>
-                        <a href=" {{route('dossiers.create')}} " class="btn d-block w-100 btn-danger text-white" >Nouveau Document</a>
+
                     </div>
+                    <a href=" {{route('dossiers.create')}} " class="btn d-block ms-auto btn-danger text-white" >Nouveau Document</a>
                     <div class="ms-auto">
                         <div class="dl">
                             <select class="form-select shadow-none">
@@ -36,16 +37,19 @@
                         </div>
                     </div>
                 </div>
+                <br>
                 <!-- title -->
                 <div class="table-responsive">
                     <table class="table mb-0 table-hover align-middle text-nowrap">
+
                         <thead>
+                            <h5>Dossier Arrivee</h5>
                             <tr>
                                 <th class="border-top-0">Ref</th>
                                 <th class="border-top-0">Intitule</th>
                                 <th class="border-top-0">Destination</th>
                                 <th class="border-top-0">Documents</th>
-                                <th class="border-top-0">Date</th>
+                                <th class="border-top-0">Date d'arrivee</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -62,6 +66,38 @@
                                 </td>
                             </tr>
                             @endforeach
+                        </tbody>
+
+                    </table>
+<br>
+                    <table class="table mb-0 table-hover align-middle text-nowrap">
+
+                        <thead>
+                            <h5>Dossier Sorti</h5>
+                            <tr>
+                                <th class="border-top-0">Ref</th>
+                                <th class="border-top-0">Intitule</th>
+                                <th class="border-top-0">Destination</th>
+                                <th class="border-top-0">Documents</th>
+                                <th class="border-top-0">Date d'envoie</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            @foreach ($dossier_sorti as $item)
+                            <tr>
+                                <td><a href="{{route('dossiers.show',$item->id)}}">
+                                    <h4 class="m-b-0 font-16">{{$item->ref}}</h4>
+                                    </a></td>
+                                <td>{{$item->intitule}}</td>
+                                <td>{{$item->destination}}</td>
+                                <td>{{$item->file}}</td>
+                                <td>
+                                    <h5 class="m-b-0">{!! date('d/M/y', strtotime($item->date)) !!}</h5>
+                                </td>
+                            </tr>
+                            @endforeach
+
                         </tbody>
                     </table>
                 </div>

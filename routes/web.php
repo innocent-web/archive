@@ -31,6 +31,7 @@ Route::namespace('Admin')->prefix('admin')->name('admin.')->middleware('can:mana
 Route::namespace('Dossier')->prefix('dossier')->group(function(){
     Route::resource('dossiers', 'DossierController');
 });
+
 Route::namespace('Type')->prefix('type')->group(function(){
     Route::resource('type','TypesController');
 });
@@ -42,7 +43,8 @@ Route::get('/download{file}', 'DownController@download')->name('download');
 
 Route::get('/search','SearchController@search')->name('search');
 
-
+Route::get('/sorti{id}','Dossier\DossierController@sorti')->name('sorti');
+Route::post('storesort','Dossier\DossierController@storesorti')->name('sortidoc');
 
 
 

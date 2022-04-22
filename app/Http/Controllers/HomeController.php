@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Dossier;
 use Illuminate\Http\Request;
 use App\User;
+use App\DossierS;
 
 class HomeController extends Controller
 {
@@ -27,9 +28,11 @@ class HomeController extends Controller
     {
        $user= User::all();
        $dossier=Dossier::all();
+       $sorti=DossierS::all();
         return view('home', [
             'user'=> $user,
-            'dossier'=>$dossier
+            'dossier'=>$dossier,
+            'sorti'=>$sorti
         ]);
     }
 }

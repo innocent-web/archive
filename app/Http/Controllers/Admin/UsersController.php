@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Role;
 use App\User;
-
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Http\Request;
 use PhpParser\Node\Stmt\Return_;
@@ -21,9 +21,13 @@ class UsersController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+     public function __construct(){
 
+      $this->middleware('auth');
+       }
     public function index()
     {
+        $users = Auth::user();
         $users = User::all();
        return  view ('admin.users.index', compact('users'));
     }

@@ -14,12 +14,11 @@
     <title>Gestion Archive</title>
     <link rel="canonical" href="https://www.wrappixel.com/templates/Flexy-admin-lite/" />
     <!-- Favicon icon -->
-    <link rel="icon" type="image/png" sizes="16x16" href="../../../images/favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{URL::asset('images/favicon.ico')}}">
     <!-- Custom CSS -->
-    <link href="../assets/libs/chartist/dist/chartist.min.css" rel="stylesheet">
-    <link href="../assets/libs/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.css" rel="stylesheet">
+
     <!-- Custom CSS -->
-    <link href="../../../css/style.min.css" rel="stylesheet">
+    <link href="{{URL::asset('css/style.min.css')}}" rel="stylesheet">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -96,12 +95,14 @@
                         <!-- ============================================================== -->
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark pro-pic" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                <img src="../../../images/favicon.ico" alt="user" class="rounded-circle" width="31">
+                                <img src="{{URL::asset('images/favicon.ico')}}" alt="user" class="rounded-circle" width="31">
                                <span class="mb-0 fw-bold">{{ Auth::user()->pseudo }}</span>
                             </a>
+
                             <ul class="dropdown-menu dropdown-menu-end user-dd animated" aria-labelledby="navbarDropdown">
+                                @can('manage-users')
                                 <a class="dropdown-item" href="{{route('admin.users.index')}}"><i class="ti-user m-r-5 m-l-5"></i>
-                                    Liste User</a>
+                                    Liste User</a> @endcan
                                 <a class="dropdown-item" href="{{ route('logout') }}"
                                 onclick="event.preventDefault();
                                document.getElementById('logout-form').submit();">
@@ -111,6 +112,7 @@
                                         @csrf
                                     </form>
                             </ul>
+
                         </li>
                         <!-- ============================================================== -->
                         <!-- User profile and search -->
@@ -135,7 +137,8 @@
                         <li class="sidebar-item">
                              <a class="sidebar-link waves-effect waves-dark sidebar-link"
                                 href=" {{route('home')}} " aria-expanded="false"><i class="mdi mdi-view-dashboard"></i>
-                                <span class="hide-menu">Tableau de Bord</span></a></li>
+                                <span class="hide-menu">Tableau de Bord</span></a>
+                            </li>
                         <li class="sidebar-item">
                             <a class="sidebar-link waves-effect waves-dark sidebar-link"
                                 href=" {{route('dossiers.index')}} " aria-expanded="false">
@@ -205,21 +208,17 @@
     <!-- ============================================================== -->
     <!-- All Jquery -->
     <!-- ============================================================== -->
-    <script src="../../../assets/libs/jquery/dist/jquery.min.js"></script>
+    <script src="{{URL::asset('assets/libs/jquery/dist/jquery.min.js')}}"></script>
     <!-- Bootstrap tether Core JavaScript -->
-    <script src="../../../assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="../../../js/app-style-switcher.js"></script>
+    <script src="{{URL::asset('assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js')}}"></script>
+    <script src="{{URL::asset('js/app-style-switcher.js')}}"></script>
     <!--Wave Effects -->
-    <script src="../../../js/waves.js"></script>
+    <script src="{{URL::asset('js/waves.js')}}"></script>
     <!--Menu sidebar -->
-    <script src="../../../js/sidebarmenu.js"></script>
+    <script src="{{URL::asset('js/sidebarmenu.js')}}"></script>
     <!--Custom JavaScript -->
-    <script src="../../../js/custom.js"></script>
-    <!--This page JavaScript -->
-    <!--chartis chart-->
-    <script src="../assets/libs/chartist/dist/chartist.min.js"></script>
-    <script src="../assets/libs/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.min.js"></script>
-    <script src="../../../js/pages/dashboards/dashboard1.js"></script>
+    <script src="{{URL::asset('js/custom.js')}}"></script>
+    <script src="{{URL::asset('js/pages/dashboards/dashboard1.js')}}"></script>
 </body>
 
 </html>

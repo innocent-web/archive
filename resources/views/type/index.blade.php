@@ -22,7 +22,7 @@
                 <!-- title -->
                 <div class="d-md-flex">
                     <div>
-                        <h4 class="card-title">Nos Types de Document</h4>
+                        <h4 class="card-title">Liste</h4>
 
                     </div>
                     <div class="ms-auto">

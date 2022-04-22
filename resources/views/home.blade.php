@@ -21,11 +21,11 @@
         <div class="col-sm-4 grid-margin" >
           <div class="card">
             <div class="card-body">
-              <h5>Revenue</h5>
+              <h5>Nbr Dossier Arrivee</h5>
               <div class="row">
                 <div class="col-8 col-sm-12 col-xl-8 my-auto">
                   <div class="d-flex d-sm-block d-md-flex align-items-center">
-                    <h2 class="mb-0">0 Ar</h2>
+                    <h2 class="mb-0">{{$dossier->count()}}</h2>
                     <p class="text-success ml-2 mb-0 font-weight-medium"></p>
                   </div>
                   <h6 class="text-muted font-weight-normal"></h6>
@@ -37,11 +37,11 @@
         <div class="col-sm-4 grid-margin">
           <div class="card">
             <div class="card-body">
-              <h5>Nbr Doc</h5>
+              <h5>Nbr Dossier Sorti</h5>
               <div class="row">
                 <div class="col-8 col-sm-12 col-xl-8 my-auto">
                   <div class="d-flex d-sm-block d-md-flex align-items-center">
-                    <h2 class="mb-0">{{$dossier->count()}}</h2>
+                    <h2 class="mb-0">{{$sorti->count()}}</h2>
                     <p class="text-success ml-2 mb-0 font-weight-medium"></p>
                   </div>
                   <h6 class="text-muted font-weight-normal"></h6>

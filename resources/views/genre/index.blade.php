@@ -22,7 +22,7 @@
                 <!-- title -->
                 <div class="d-md-flex">
                     <div>
-                        <h4 class="card-title">Nos Genres de Document</h4>
+                        <h4 class="card-title">Liste</h4>
                     </div>
                     <div class="ms-auto">
                         <a href=" {{route('genre.create')}} " class="btn d-block w-100 btn-primary text-white" >Nouveau Genre</a>
